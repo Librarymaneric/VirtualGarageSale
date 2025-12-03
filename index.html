@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Virtual Garage Sale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class="title">
+        <h3>Welcome to Eric's Virtual Garage Sale!</h3>
+        <p id="description">Please take a look at my wares.  Once you determine how much of the items you'd like, calculate your total and submit your information for the invoice</p>
+    </div>
+    <div class="displayItems">
+        <table class="itemList">
+            <tr>
+                <td>
+                    <b>Item #1 </b><br>
+                    <b>Name:</b> Bar of Soap (used) <br>
+                    <b>Quantity:</b> 1<br>
+                    <b>Description:</b> A used bar of soap.  Only used twice.<br>
+                    <b>Price:</b> $3<br>
+                    <b>Add to cart:</b> <select name="item1Quantity" id="item1Quantity">
+                        <option>0</option>
+                        <option>1</option>
+                    </select>
+                </td>
+                <td>
+                    <b>Item #2 </b><br>
+                    <b>Name:</b> Q-tip (used)<br>
+                    <b>Quantity:</b> 1<br>
+                    <b>Description:</b> A used Q-tip.  Only one side was used so the other side is all yours (for a price)!<br>
+                    <b>Price:</b> <s>$1</s> $0.50 (Half off!)<br>
+                    <b>Add to cart:</b> <select name="item2Quantity" id="item2Quantity">
+                        <option>0</option>
+                        <option>1</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Item #3 </b><br>
+                    <b>Name:</b> Blender <br>
+                    <b>Quantity:</b> 1 <br>
+                    <b>Description:</b> Blender.  Looks like new.  Motor is burned out from making a date and almond smoothie. <br>
+                    <b>Price:</b> $10<br>
+                    <b>Add to cart:</b> <select name="item3Quantity" id="item3Quantity">
+                        <option>0</option>
+                        <option>1</option>
+                    </select>
+                </td>
+                <td>
+                    <b>Item #4 </b><br>
+                    <b>Name:</b> Mr. Monkey <br>
+                    <b>Quantity:</b> 1 <br>
+                    <b>Description:</b> Stuffed toy monkey.  Roughly 44 years old.  Has been thrown up on by at least 3 humans. <br>
+                    <b>Price:</b> Priceless (or best offer)<br>
+                    <b>Add to cart:</b> <select name="item4Quantity" id="item4Quantity">
+                        <option>0</option>
+                        <option>1</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Item #5 </b><br>
+                    <b>Name:</b> Coffee Mug<br>
+                    <b>Quantity:</b> 5<br>
+                    <b>Description:</b> Standard coffee mug.  The words "World's Sexiest Dad" painted on the side.<br>
+                    <b>Price:</b> $4<br>
+                    <b>Add to cart:</b> <select name="item1Quantity" id="item5Quantity"> 
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="orderComplete">
+                <button type="button" onclick="completeOrder()">Complete Order</button>
+                <button type="button" onclick="resetDropdown()">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="totalCost">
+        The total cost of your order is: <br>
+        <output name="orderTotal" id="orderTotal"></output><br>
+    </div>
+    <div class="purchaseForm">
+        <form>
+            <fieldset>
+                <legend>Customer Info</legend>
+                <label for="fname">First Name:</label>
+                    <input type="text" name="fname" required><br>
+                <label for="lname">Last Name:</label>     
+                    <input type="text" name="lname" required><br>
+                <label for="address">Address:</label>
+                    <input type="text" name="address" required><br> 
+                <label for="city">City:</label>    
+                    <input type="text" name="city" required><br>
+                <label for="state">State:</label>   
+                    <input type="text" name="state" required maxlength="2" placeholder="2-character abbreviation" pattern="[a-zA-Z]{2}"><br>
+                <label for="zip">Zip:</label>
+                    <input type="text" name="zip" required placeholder="5 or 9 digits" pattern="^\d{5}(-\d{4})?$" title="Either 5 or 9 digits" required><br>
+                <label for="phone">Phone:</label>
+                    <input type="tel" name="phone" placeholder="999-999-9999" pattern="/d{3}[-]/d{3}[-]/d{4}" title="Phone number must be of format 999-999-9999" required><br>
+                <label for="email">Email:</label>
+                    <input type="email" name="email" required placeholder="mail@ericrocks.com" pattern="[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$" title="email must have @ and valid hosting site"><br>
+                <label for="feedback">What do you want to tell us about your experience?</label>
+                    <select name="Feedback" size="3" multiple>
+                        <option value="feedback1">Site was easy to use</option>
+                        <option value="feedback2">Great selection of products</option>
+                        <option value="feedback3">The owner was super cute</option>
+                        <option value="feedback4">Site was NOT easy to use</option>
+                        <option value="feedback5">Did not like product selection</option>
+                        <option value="feedback6">NGL the owner is super cute</option>
+                    </select><br>
+                <label for="comments">Leave a Comment</label><br>
+                    <textarea name="comments" placeholder="If you have any comments, please enter them here."></textarea>
+                    
+            </fieldset>
+            <input type="submit" name="submit" value="Submit Customer Info">
+            <button type="reset">Clear Information</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
