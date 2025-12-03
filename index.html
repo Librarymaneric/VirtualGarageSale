@@ -112,7 +112,7 @@
                 <label for="email">Email:</label>
                     <input type="email" name="email" id="email" required placeholder="mail@ericrocks.com" pattern="[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$" title="email must have @ and valid hosting site"><br>
                 <label for="feedback">What do you want to tell us about your experience?</label>
-                    <select name="Feedback" size="3" multiple>
+                    <select name="Feedback" id="feedback" size="3" multiple>
                         <option value="feedback1">Site was easy to use</option>
                         <option value="feedback2">Great selection of products</option>
                         <option value="feedback3">The owner was super cute</option>
@@ -121,7 +121,7 @@
                         <option value="feedback6">NGL the owner is super cute</option>
                     </select><br>
                 <label for="comments">Leave a Comment</label><br>
-                    <textarea name="comments" placeholder="If you have any comments, please enter them here."></textarea>
+                    <textarea name="comments" id="comments" placeholder="If you have any comments, please enter them here."></textarea>
                     
             </fieldset>
             <input type="submit" name="submit" value="Submit Customer Info">
